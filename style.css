@@ -1,0 +1,377 @@
+@font-face {
+    font-family: "Michroma";
+    src: url(assets/fonts/Michroma.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "Alex Brush";
+    src: url(assets/fonts/AlexBrush-Regular.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "Big Shoulders";
+    src: url(assets/fonts/BigShouldersText-Light.ttf) format("truetype");
+}
+
+:root {
+    --primary-color: #B8396C;
+    --secondary-color: #DF89AB;
+    --accent-color: #333333;
+    --background-color: #FFFFFF;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Big Shoulders";
+    
+}
+
+p, label, button {font-family: "Michroma";}
+
+button {
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+img {object-fit: cover;}
+
+.cta-button {
+    background-color: var(--accent-color);
+    color: var(--background-color);
+    border: none;
+    padding: 10px 30px;
+}
+
+/* Navbar Styles */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    width: 100%;
+    padding: 5px 20px;
+    margin: 10px auto 0px;
+    position: sticky;
+    top: 0;
+    background-color: var(--background-color);
+    z-index: 10000;
+}
+
+.title, .footer-title {font-family: "Alex Brush";}
+
+.title, .nav-button {color: var(--primary-color);}
+
+.nav-button {
+    background-color: transparent;
+    border: none;
+}
+
+.contact-cta {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    border: none;
+    padding: 5px 10px;
+}
+
+@media screen and (max-width: 700px) {
+    .nav-button {display: none;}
+
+}
+
+@media screen and (min-width: 701px) {
+    .contact-cta {display: none;}
+}
+
+/* Hero Section Styles */
+.hero {
+    width: 100%;
+    margin: 0px auto;
+    padding: 10px 20px;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    height: 700px;
+    width: 100%;
+    background-image: url("assets/images/black_woman_with_henna.jpg");
+    background-size: cover;
+    background-attachment: local;
+    background-position: center;
+}
+
+.hero-feature {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 200px;
+    width: 100%;
+    margin-top: 350px;
+    padding: 20px;
+    color: var(--background-color);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+}
+
+.hero-title {
+    font-size: 3.75rem;
+    transform: scaleY(2);
+}
+
+.hero-cta {margin-bottom: 50px;}
+
+@media screen and (max-width: 700px) {
+    .hero-feature {
+        flex-direction: column;
+        gap: 80px;
+        height: auto;
+        margin-top: 100px;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+        text-align: center;
+    }
+
+    .hero-cta {text-align: center;}
+}
+
+@media screen and (min-width: 701px) and (max-width: 1000px) {
+    .hero-feature {
+        gap: 100px;
+        margin-top: 200px;
+    }
+
+}
+
+@media screen and (min-width: 1001px) and (max-width: 1200px) {
+    .hero-feature {
+        gap: 100px;
+        margin-top: 250px;
+    }
+
+}
+
+/* Banner Section Styles */
+.banner {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 100%;
+    padding: 20px;
+    margin: 20px auto;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    text-align: center;
+}
+
+.banner h1 {transform: scaleY(2);}
+
+@media screen and (max-width: 700px) {
+    .banner {
+        display: flex;
+        flex-direction: column;
+        gap: 00px;
+    }
+}
+
+/* Services Section Styles */
+.services {
+    margin: 20px auto;
+}
+
+.service-header, .about-header, .course-signup-header {
+    padding: 20px;
+    border-bottom: 1px solid #333333;
+}
+
+.service-header h1, .about-header h1, .course-signup-header h1 {
+    font-size: 3.75rem;
+    color: var(--primary-color);
+    transform: scaleY(2);
+}
+
+.service-list {padding: 20px;}
+
+.service-alt-1, .service-alt-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+.service-alt-1 h1, .service-alt-2 h1 {transform: scaleY(1.8);}
+
+.service-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.service-alt-1 img, .service-alt-2 img {
+    width: 100%;
+    height: 450px;
+}
+
+@media screen and (max-width: 700px) {
+    .service-header h1, 
+    .about-header h1, 
+    .course-signup-header h1 {
+        font-size: 2.5rem;
+        margin:90px auto;
+    }
+
+    .service-alt-1 {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .service-alt-2 {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+}
+
+@media screen and (min-width: 701px) and (max-width: 1200px) {
+    .service-header h1, 
+    .about-header h1, 
+    .course-signup-header h1 {
+        margin:90px auto;
+    }
+}
+
+/* About Section Styles */
+.about {
+    width: 100%;
+    margin: 20px auto;
+    background-color: var(--secondary-color);
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+.about-content img {
+    width: 50%;
+    height: 400px;
+}
+
+@media screen and (max-width: 700px) {
+    .about-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-content img {
+        width: 100%;
+        height: 400px;
+    }
+}
+
+/* Course Signup Section Styles */
+.course-signup {
+    width: 100%;
+    margin: 20px auto;
+}
+
+.signup-card {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+    background-color: var(--primary-color);
+    width: 95%;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.signup-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.signup-form label {width: 80%;}
+
+.signup-form input {
+    height: 40px;
+    width: 80%;
+    padding: 10px 20px;
+    border: none;
+    background-color: var(--background-color);
+    outline: none;
+}
+
+.signup-button {
+    width: 80%;
+    background-color: var(--accent-color);
+    color: var(--background-color);
+    border: none;
+    padding: 10px 30px;
+    margin-top: 10px;
+}
+
+@media screen and (max-width: 700px) {
+    .signup-card {grid-template-columns: 1fr;}
+
+    .signup-form input, .signup-button {width: 100%}
+}
+
+/* Footer Section Styles */
+footer {
+    width: 100%;
+    background-color: var(--secondary-color);
+    padding: 20px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--background-color);
+}
+
+.footer-links div {width: 300px;}
+
+.footer-title {
+    font-size: 5rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin: 20px auto;
+}
+
+.footer-subscript {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+    color: var(--accent-color);
+}
+
+.footer-subscript p {font-size: 0.9rem;}
+
+@media screen and (max-width: 700px) {
+    .footer-links {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .footer-links div {
+        width: 100%;
+        text-align: center;
+    }
+
+    .footer-title {font-size: 3rem;}
+
+    .footer-subscript {
+        flex-direction: column;
+    }
+}
