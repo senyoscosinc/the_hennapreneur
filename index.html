@@ -7,38 +7,50 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <title>The Hennapreneur</title>
 </head>
 <body>
     <nav>
-        <h2 class="title" data-aos-duration="800" data-aos="flip-left">The Hennapreneur</h2>
+        <h2 class="title">The Hennapreneur</h2>
         <div class="nav-buttons">
-            <button class="nav-button" data-aos-duration="800" data-aos="flip-left">Designs</button>
-            <button class="nav-button" data-aos-duration="800" data-aos="flip-left">Learn</button>
-            <button class="nav-button" data-aos-duration="800" data-aos="flip-left">Contact</button>
+            <a href="#services"><button class="nav-button">Designs</button></a>
+            <a href="#course"><button class="nav-button">Course</button></a>
+            <button id="contactBtnAlt" class="nav-button">Contact</button>
         </div>
-        <button class="contact-cta">Contact</button>
+        <button id="contactBtn" class="contact-cta">Contact</button>
     </nav>
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" id="hero">
         <div class="hero-content">
             <div class="hero-feature">
-                <h1 class="hero-title" data-aos-duration="800" data-aos="fade-down-left">Authentic Artistry Blending Heritage With Contemporary Style.</h1>
+                <h1 class="hero-title">Authentic Artistry Blending Heritage With Contemporary Style.</h1>
                 <div class="hero-cta">
-                    <p data-aos-duration="800" data-aos="fade-down-right">Hand crafted designs to celebrate your beauty, culture and spirit.</p>
-                    <button class="cta-button" data-aos-duration="800" data-aos="flip-right">Explore</button>
+                    <p>Hand crafted designs to celebrate your beauty, culture and spirit.</p>
+                    <a href="#about"><button class="cta-button">Explore</button></a>
                 </div>
             </div>
         </div>
     </section>
     <section class="banner">
-        <h1 data-aos-duration="800" data-aos="fade-up">Bespoke Creation</h1>
-        <h1 data-aos-duration="900" data-aos="fade-up">Timeless Art</h1>
-        <h1 data-aos-duration="1000" data-aos="fade-up">Intricate Patterns</h1>
+        <div class="scrolling-text">
+            <span>Bespoke Creation</span>
+            <span>Timeless Art</span>
+            <span>Intricate Patterns</span>
+            <span>Bespoke Creation</span>
+            <span>Timeless Art</span>
+            <span>Intricate Patterns</span>
+            <span>Bespoke Creation</span>
+            <span>Timeless Art</span>
+            <span>Intricate Patterns</span>
+            <span>Bespoke Creation</span>
+            <span>Timeless Art</span>
+            <span>Intricate Patterns</span>
+        </div>
     </section>
-    <section class="services">
+    <section class="services" id="services">
         <div class="service-header">
-            <h1 data-aos-duration="800" data-aos="fade-up">Let Your Skin Be The Canvas: Discover My Henna Creations</h1>
+            <h1>Let Your Skin Be The Canvas: Discover My Henna Creations</h1>
             <p data-aos-duration="800" data-aos="fade-up">
                 Whether you’re celebrating a special moment, embracing your unique style, or simply indulging in the beauty of henna,
                 I offer a range of services tailored to bring your vision to life. From intricate bridal designs to bold, modern pieces,
@@ -58,7 +70,7 @@
                         story—adding timeless beauty and tradition to your
                         celebration.
                     </p>
-                    <button class="cta-button" data-aos-duration="800" data-aos="flip-right">Book</button>
+                    <button class="cta-button" data-aos-duration="800" data-aos="flip-right" data-service="0">Book</button>
                 </div>
                 <img src="assets/images/bridal_henna.jpg" alt="a bride with intricate henna designs on her hands and arms" class="service-image" data-aos-duration="800" data-aos="flip-left">
             </div>
@@ -73,7 +85,7 @@
                         crafted to bring beauty, confidence, and joy to your
                         everyday moments.
                     </p>
-                    <button class="cta-button" data-aos-duration="800" data-aos="flip-right">Book</button>
+                    <button class="cta-button" data-aos-duration="800" data-aos="flip-right" data-service="1">Book</button>
                 </div>
             </div>
             <div class="service-alt-1">
@@ -86,7 +98,7 @@
                         intricate patterns to create a striking statement of strength, 
                         grace, and individuality.
                     </p>
-                    <button class="cta-button" data-aos-duration="800" data-aos="flip-right">Book</button>
+                    <button class="cta-button" data-aos-duration="800" data-aos="flip-right" data-service="2">Book</button>
                 </div>
                 <img src="assets/images/spine_henna.jpg" alt="a dark skin woman with a beautiful spine henna design" class="service-image" data-aos-duration="800" data-aos="flip-left">
             </div>
@@ -95,12 +107,12 @@
                 <div class="service-description">
                     <h1 data-aos-duration="800" data-aos="fade-up">Waist Henna</h1>
                     <p data-aos-duration="800" data-aos="fade-up">
-                        Embrace the beauty of your body with waist henna—delicate yet 
-                        bold designs that highlight your curves and add a unique, 
-                        graceful touch. Whether it’s for a special occasion or self-expression, 
+                        Embrace the beauty of your body with waist henna—delicate yet
+                        bold designs that highlight your curves and add a unique,
+                        graceful touch. Whether it’s for a special occasion or self-expression,
                         waist henna creates an alluring statement of confidence and femininity.
                     </p>
-                    <button class="cta-button" data-aos-duration="800" data-aos="flip-right">Book</button>
+                    <button class="cta-button" data-aos-duration="800" data-aos="flip-right" data-service="3">Book</button>
                 </div>
             </div>
             <div class="service-alt-1">
@@ -112,7 +124,7 @@
                         shoots, special occasions, or personal expression, belly henna adds a meaningful, 
                         artistic touch that symbolizes confidence, femininity, and inner harmony.
                     </p>
-                    <button class="cta-button" data-aos-duration="800" data-aos="flip-right">Book</button>
+                    <button class="cta-button" data-aos-duration="800" data-aos="flip-right" data-service="4">Book</button>
                 </div>
                 <img src="assets/images/belly_henna.jpg" alt="a woman with a beautiful belly henna design" class="service-image" data-aos-duration="800" data-aos="flip-left">
             </div>
@@ -121,12 +133,12 @@
                 <div class="service-description">
                     <h1 data-aos-duration="800" data-aos="fade-up">Chest Henna</h1>
                     <p data-aos-duration="800" data-aos="fade-up">
-                        Chest henna enhances the natural contours of your body with intricate, empowering 
-                        designs. Whether it’s a delicate floral pattern or a bold, symbolic piece, chest 
-                        henna brings a sense of grace and strength, celebrating your individuality and 
+                        Chest henna enhances the natural contours of your body with intricate, empowering
+                        designs. Whether it’s a delicate floral pattern or a bold, symbolic piece, chest
+                        henna brings a sense of grace and strength, celebrating your individuality and
                         adding an artistic touch to your most personal space.
                     </p>
-                    <button class="cta-button" data-aos-duration="800" data-aos="flip-right">Book</button>
+                    <button class="cta-button" data-aos-duration="800" data-aos="flip-right" data-service="5">Book</button>
                 </div>
             </div>
             <div class="service-alt-1">
@@ -138,16 +150,16 @@
                         artistic and sensual touch. Perfect for making a bold statement or simply embracing your 
                         body with unique, beautiful art.
                     </p>
-                    <button class="cta-button" data-aos-duration="800" data-aos="flip-right">Book</button>
+                    <button class="cta-button" data-aos-duration="800" data-aos="flip-right" data-service="6">Book</button>
                 </div>
                 <img src="assets/images/thigh_henna.jpg" alt="a woman with a beautiful thigh henna design" class="service-image" data-aos-duration="800" data-aos="flip-left">
             </div>
         </div>
     </section>
 
-    <section class="about">
+    <section class="about" id="about">
         <div class="about-header">
-            <h1 data-aos-duration="800" data-aos="fade-up">Handcrafted Beauty: The Passion Behind Every Pattern</h1>
+            <h1>Handcrafted Beauty: The Passion Behind Every Pattern</h1>
         </div>
         <div class="about-content">
             <p data-aos-duration="800" data-aos="fade-up">
@@ -172,9 +184,9 @@
         </div>
     </section>
 
-    <section class="course-signup">
+    <section class="course-signup" id="course">
         <div class="course-signup-header">
-            <h1 data-aos-duration="800" data-aos="fade-up">Unlock Your Creative Potential: Learn The Art Of Henna With Me!</h1>
+            <h1>Unlock Your Creative Potential: Learn The Art Of Henna With Me!</h1>
             <p data-aos-duration="800" data-aos="fade-up">Transform your art into passion. Join my 3-month intensive course and master the art of henna design.</p>
         </div>
         <div class="signup-card">
@@ -203,12 +215,12 @@
     <footer>
         <div class="footer-links">
             <div class="contact">
-                <h3 data-aos-duration="800" data-aos="fade-up">Contact Me</h3>
+                <h2 data-aos-duration="800" data-aos="fade-up">Contact Me</h2>
                 <p data-aos-duration="800" data-aos="fade-up">050 473 2494 / 053 264 1071</p>
                 <p data-aos-duration="800" data-aos="fade-up">ayishainusah037@gmail.com</p>
             </div>
             <div class="socials">
-                <h3 data-aos-duration="800" data-aos="fade-up">Follow Me</h3>
+                <h2 data-aos-duration="800" data-aos="fade-up">Follow Me</h2>
                 <p data-aos-duration="800" data-aos="fade-up">Instagram: @the_hennapreneur</p>
                 <p data-aos-duration="800" data-aos="fade-up">Snapchat: @the_hennapreneur</p>
                 <p data-aos-duration="800" data-aos="fade-up">Facebook: The Hennapreneur</p>
@@ -216,11 +228,241 @@
         </div>
         <h1 class="footer-title" data-aos-duration="800" data-aos="fade-up">The Hennapreneur</h1>
         <div class="footer-subscript">
-            <p>&copy; 2024 The Hennapreneur. All rights reserved.</p>
-            <p>Designed by <a href="#" target="_blank">Senyosco's Inc.</a></p>
+            <p>&copy; The Hennapreneur. All rights reserved.</p>
+            <p>Designed by & built by <a href="http://senyoscosinc.netlify.app" target="_blank">Senyosco's Inc.</a></p>
         </div>
+        <script>
+            let year = new Date().getFullYear();
+            document.querySelector('.footer-subscript p:first-child').innerHTML = `&copy; ${year} The Hennapreneur. All rights reserved.`;
+        </script>
     </footer>
-     <script>
+
+    <!-- Popup Cards -->
+    <div id="popupOverlay" class="overlay">
+        <div class="contact-card">
+            <button class="close-btn">&times;</button>
+            <h1>Contact Me</h1>
+            <h2>Let's Talk</h2>
+            <p>050-473-2494 / 053-264-1071</p>
+            <p>Or send me a WhatsApp</p>
+            <h2>Find me at:</h2>
+            <p>Dansoman - Orisco</p>
+        </div>
+    </div>
+
+    <!-- Service Popup -->
+    <div id="servicePopupOverlay" class="overlay">
+        <div class="service-card">
+            <button class="close-btn">&times;</button>
+            <img id="serviceImage" src="" alt="Service Image" style="width:100%; height:350px; object-fit:cover;">
+            <h1 id="serviceTitle"></h1>
+            <h2 id="selectedOption"></h2>
+            <div id="serviceOptions">
+                <!-- Radio buttons will be populated here -->
+            </div>
+            <div id="bookingForm" style="display:none;">
+                <p>Book this service now to be ahead of the rush.</p>
+                <form id="serviceBookingForm">
+                    <label for="bookName">Name</label>
+                    <input type="text" id="bookName" name="name" required>
+                    <label for="bookEmail">Email</label>
+                    <input type="email" id="bookEmail" name="email" required>
+                    <label for="bookPhone">Phone</label>
+                    <input type="tel" id="bookPhone" name="phone" required>
+                    <label for="bookDate">Preferred Date</label>
+                    <input type="date" id="bookDate" name="date" required>
+                    <button type="submit" class="cta-button">Book Now</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const contactBtn = document.getElementById("contactBtn");
+        const contactBtnAlt = document.getElementById("contactBtnAlt");
+        const overlay = document.getElementById("popupOverlay");
+        const closeBtn = document.querySelector(".close-btn");
+
+        contactBtn.addEventListener("click", () => {
+            overlay.classList.add("active");
+        });
+
+        contactBtnAlt.addEventListener("click", () => {
+            overlay.classList.add("active");
+        });
+
+        closeBtn.addEventListener("click", () => {
+            overlay.classList.remove("active");
+        });
+
+        // Close when clicking outside the card
+        overlay.addEventListener("click", (e) => {
+            if (e.target === overlay) {
+            overlay.classList.remove("active");
+            }
+        });
+    </script>
+
+    <script>
+        // Initialize EmailJS - Replace 'YOUR_PUBLIC_KEY' with your actual public key from EmailJS
+        emailjs.init('HcGcz1RIocWPAWtSn ');
+
+        const services = [
+            {
+                name: "Bridal Henna",
+                image: "assets/images/bridal_henna.jpg",
+                options: [
+                    { name: "Standard Design", price: 500 }
+                ]
+            },
+            {
+                name: "Casual Henna",
+                image: "assets/images/casual_henna.jpg",
+                options: [
+                    { name: "Hands", price: 70 },
+                    { name: "Hands & Feet", price: 250 }
+                ]
+            },
+            {
+                name: "Spine Henna",
+                image: "assets/images/spine_henna.jpg",
+                options: [
+                    { name: "Full Spine Design", price: 200 },
+                    { name: "Minimal Spine Accent", price: 80 }
+                ]
+            },
+            {
+                name: "Waist Henna",
+                image: "assets/images/waist_henna.jpg",
+                options: [
+                    { name: "Full Waist Design", price: 150 },
+                    { name: "Small Waist Accent", price: 50 }
+                ]
+            },
+            {
+                name: "Belly Henna",
+                image: "assets/images/belly_henna.jpg",
+                options: [
+                    { name: "Full Belly Design", price: 150 },
+                    { name: "Belly Button Accent", price: 50 }
+                ]
+            },
+            {
+                name: "Chest Henna",
+                image: "assets/images/chest_henna-alt.jpg",
+                options: [
+                    { name: "Full Chest Design", price: 150 },
+                    { name: "Small Chest Accent", price: 50 }
+                ]
+            },
+            {
+                name: "Thigh Henna",
+                image: "assets/images/thigh_henna.jpg",
+                options: [
+                    { name: "Full Thigh Design", price: 200 },
+                    { name: "Thigh Accent", price: 70 }
+                ]
+            }
+        ];
+
+        const serviceButtons = document.querySelectorAll('.cta-button[data-service]');
+        const serviceOverlay = document.getElementById('servicePopupOverlay');
+        const serviceCloseBtn = serviceOverlay.querySelector('.close-btn');
+        const serviceImage = document.getElementById('serviceImage');
+        const serviceTitle = document.getElementById('serviceTitle');
+        const selectedOption = document.getElementById('selectedOption');
+        const serviceOptions = document.getElementById('serviceOptions');
+        const bookingForm = document.getElementById('bookingForm');
+        const serviceForm = document.getElementById('serviceBookingForm');
+        let currentServiceIndex;
+
+        serviceButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                currentServiceIndex = parseInt(e.target.getAttribute('data-service'));
+                const service = services[currentServiceIndex];
+
+                serviceImage.src = service.image;
+                serviceTitle.textContent = service.name;
+
+                serviceOptions.innerHTML = '';
+                service.options.forEach((option, index) => {
+                    const label = document.createElement('label');
+                    const radio = document.createElement('input');
+                    radio.type = 'radio';
+                    radio.name = 'serviceOption';
+                    radio.value = index;
+                    if (index === 0) radio.checked = true;
+                    label.appendChild(radio);
+                    label.appendChild(document.createTextNode(` ${option.name} - GHS ${option.price}`));
+                    serviceOptions.appendChild(label);
+                    serviceOptions.appendChild(document.createElement('br'));
+                });
+
+                // Set initial selected option
+                const selectedOpt = service.options[0];
+                selectedOption.textContent = `Selected: ${selectedOpt.name} - GHS ${selectedOpt.price}`;
+
+                bookingForm.style.display = 'block'; // Since first is selected
+                serviceOverlay.classList.add('active');
+            });
+        });
+
+        serviceOptions.addEventListener('change', (e) => {
+            if (e.target.type === 'radio') {
+                const optionIndex = parseInt(e.target.value);
+                const selectedOpt = services[currentServiceIndex].options[optionIndex];
+                selectedOption.textContent = `Selected: ${selectedOpt.name} - GHS ${selectedOpt.price}`;
+            }
+        });
+
+        serviceCloseBtn.addEventListener('click', () => {
+            serviceOverlay.classList.remove('active');
+        });
+
+        serviceOverlay.addEventListener('click', (e) => {
+            if (e.target === serviceOverlay) {
+                serviceOverlay.classList.remove('active');
+            }
+        });
+
+        serviceForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const selectedRadio = document.querySelector('input[name="serviceOption"]:checked');
+            const optionIndex = parseInt(selectedRadio.value);
+            const selectedOption = services[currentServiceIndex].options[optionIndex];
+
+            const templateParams = {
+                service_name: services[currentServiceIndex].name,
+                option_name: selectedOption.name,
+                option_price: selectedOption.price,
+                customer_name: document.getElementById('bookName').value,
+                customer_email: document.getElementById('bookEmail').value,
+                customer_phone: document.getElementById('bookPhone').value,
+                preferred_date: document.getElementById('bookDate').value
+            };
+
+            // Send email to business owner
+            emailjs.send('service_w528ysb', 'template_3yutmb9', templateParams)
+                .then((response) => {
+                    // Send confirmation email to user
+                    return emailjs.send('service_w528ysb', 'template_jo3vdxo', {
+                        ...templateParams,
+                        to_email: templateParams.customer_email
+                    });
+                })
+                .then((response) => {
+                    alert('Booking submitted successfully! Check your email for confirmation.');
+                    serviceOverlay.classList.remove('active');
+                    serviceForm.reset();
+                    bookingForm.style.display = 'none';
+                }, (error) => {
+                    alert('Failed to send booking. Please try again or contact us directly.');
+                    console.error('EmailJS error:', error);
+                });
+        });
+    </script>
+    <script>
         AOS.init();
     </script>
 </body>
