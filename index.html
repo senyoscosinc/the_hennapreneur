@@ -27,7 +27,7 @@
       "@type": "LocalBusiness",
       "name": "The Hennapreneur",
       "description": "Authentic henna artistry blending heritage with contemporary style.",
-      "url": "https://thehennapreneur.com",
+      "url": "https://thehennapreneur.org",
       "telephone": "+233504732494",
       "email": "ayishainusah037@gmail.com",
       "address": {
@@ -36,9 +36,9 @@
         "addressCountry": "GH"
       },
       "sameAs": [
-        "https://www.instagram.com/the_hennapreneur",
-        "https://www.snapchat.com/add/the_hennapreneur",
-        "https://www.facebook.com/TheHennapreneur"
+        "https://www.instagram.com/yhishatelegance?igsh=MTh1eW02d2oxbDV4bA==",
+        "https://www.snapchat.com/add/hennapreneur",
+        "https://vm.tiktok.com/ZMHE1qRfrLydq-itik2/"
       ],
       "serviceType": "Henna Artistry",
       "offers": [
@@ -249,7 +249,7 @@
     <section class="course-signup" id="course">
         <div class="course-signup-header">
             <h2>Unlock Your Creative Potential: Learn The Art Of Henna With Me!</h2>
-        </div>
+
             <p data-aos-duration="800" data-aos="fade-up">Transform your art into passion. Join my 3-month intensive course and master the art of henna design.</p>
         </div>
         <div class="signup-card">
@@ -286,7 +286,7 @@
                 <h2 data-aos-duration="800" data-aos="fade-up">Follow Me</h2>
                 <p data-aos-duration="800" data-aos="fade-up"><a href="https://www.instagram.com/yhishatelegance?igsh=MTh1eW02d2oxbDV4bA==" target="_blank">Instagram</a></p>
                 <p data-aos-duration="800" data-aos="fade-up"><a href="https://www.snapchat.com/add/hennapreneur" target="_blank">Snapchat</a></p>
-                <p data-aos-duration="800" data-aos="fade-up"><a href="https://vm.tiktok.com/ZMHKkCmuEMoaH-q5cy4/" target="_blank">Tik Tok</a></p>
+                <p data-aos-duration="800" data-aos="fade-up"><a href="https://vm.tiktok.com/ZMHE1qRfrLydq-itik2/" target="_blank">Tik Tok</a></p>
             </div>
         </div>
         <h1 class="footer-title" data-aos-duration="800" data-aos="fade-up">The Hennapreneur</h1>
@@ -317,25 +317,42 @@
     <div id="servicePopupOverlay" class="overlay">
         <div class="service-card">
             <button class="close-btn">&times;</button>
-            <img id="serviceImage" src="" alt="Service Image" style="width:100%; height:350px; object-fit:cover;">
+            <img class="service-img" id="serviceImage" src="" alt="Service Image">
             <h1 id="serviceTitle"></h1>
-            <h2 id="selectedOption"></h2>
-            <div id="serviceOptions">
+            <div class="service-options" id="serviceOptions">
                 <!-- Radio buttons will be populated here -->
             </div>
+            <!-- homeDetails will be injected into #serviceOptions dynamically -->
+
             <div id="bookingForm" style="display:none;">
                 <p>Book this service now to be ahead of the rush.</p>
                 <form id="serviceBookingForm">
                     <label for="bookName">Name</label>
-                    <input type="text" id="bookName" name="name" required>
+                    <input type="text" id="bookName" name="name" placeholder="Enter your full name" required>
                     <label for="bookEmail">Email</label>
-                    <input type="email" id="bookEmail" name="email" required>
+                    <input type="email" id="bookEmail" name="email" placeholder="Enter your valid email address" required>
                     <label for="bookPhone">Phone</label>
-                    <input type="tel" id="bookPhone" name="phone" required>
+                    <input type="tel" id="bookPhone" name="phone" placeholder="Enter your phone number" required>
                     <label for="bookDate">Preferred Date</label>
                     <input type="date" id="bookDate" name="date" required>
                     <button type="submit" class="cta-button">Book Now</button>
                 </form>
+
+                <!-- Permanent Booking Summary Bar (moved inside service card) -->
+                <div id="bookingSummaryBar" class="booking-summary-bar">
+                    <div class="summary-row">
+                        <span id="selectedOption">Selected Option</span>
+                        <span id="selectedOptionPrice">Price</span>
+                    </div>
+                    <div class="summary-row">
+                        <span id="serviceTypeText">Service Type</span>
+                        <span id="serviceTypePrice">Price</span>
+                    </div>
+                    <div class="summary-row total-row">
+                        <strong>Total</strong>
+                        <strong id="summaryTotalPrice">Amt</strong>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -416,7 +433,7 @@
                 name: "Bridal Henna",
                 image: "assets/images/bridal_henna.jpg",
                 options: [
-                    { name: "Standard Design", price: 500 }
+                    { name: "Standard Design", price: 550 }
                 ]
             },
             {
@@ -432,7 +449,7 @@
                 image: "assets/images/spine_henna.jpg",
                 options: [
                     { name: "Full Spine Design", price: 200 },
-                    { name: "Minimal Spine Accent", price: 80 }
+                    { name: "Minimal Spine Accent", price: 150 }
                 ]
             },
             {
@@ -456,7 +473,7 @@
                 image: "assets/images/chest_henna-alt.jpg",
                 options: [
                     { name: "Full Chest Design", price: 150 },
-                    { name: "Small Chest Accent", price: 50 }
+                    { name: "Small Chest Accent", price: 100 }
                 ]
             },
             {
@@ -464,7 +481,7 @@
                 image: "assets/images/thigh_henna.jpg",
                 options: [
                     { name: "Full Thigh Design", price: 200 },
-                    { name: "Thigh Accent", price: 70 }
+                    { name: "Thigh Accent", price: 150 }
                 ]
             }
         ];
@@ -475,10 +492,37 @@
         const serviceImage = document.getElementById('serviceImage');
         const serviceTitle = document.getElementById('serviceTitle');
         const selectedOption = document.getElementById('selectedOption');
+        const selectedOptionPriceEl = document.getElementById('selectedOptionPrice');
+        const serviceTypeTextEl = document.getElementById('serviceTypeText');
+        const serviceTypePriceEl = document.getElementById('serviceTypePrice');
+        const summaryTotalPriceEl = document.getElementById('summaryTotalPrice');
         const serviceOptions = document.getElementById('serviceOptions');
         const bookingForm = document.getElementById('bookingForm');
         const serviceForm = document.getElementById('serviceBookingForm');
+        let homeDetails = null;
+        let homeLocation = null;
         let currentServiceIndex;
+
+        function updateSummaryBar(option, serviceTypeValue, homeChargeValue) {
+            if (!option) {
+                selectedOption.textContent = 'Selected Option';
+                selectedOptionPriceEl.textContent = 'Price';
+                serviceTypeTextEl.textContent = 'Service Type';
+                serviceTypePriceEl.textContent = 'Price';
+                summaryTotalPriceEl.textContent = 'Amt';
+                return;
+            }
+            selectedOption.textContent = option.name;
+            selectedOptionPriceEl.textContent = `GHS ${option.price}`;
+            if (serviceTypeValue === 'home') {
+                serviceTypeTextEl.textContent = 'Home Service';
+                serviceTypePriceEl.textContent = `GHS ${homeChargeValue}`;
+            } else {
+                serviceTypeTextEl.textContent = 'Walk-in';
+                serviceTypePriceEl.textContent = 'GHS 0';
+            }
+            summaryTotalPriceEl.textContent = `GHS ${option.price + (homeChargeValue || 0)}`;
+        }
 
         serviceButtons.forEach(button => {
             button.addEventListener('click', (e) => {
@@ -499,25 +543,136 @@
                     label.appendChild(radio);
                     label.appendChild(document.createTextNode(` ${option.name} - GHS ${option.price}`));
                     serviceOptions.appendChild(label);
-                    serviceOptions.appendChild(document.createElement('br'));
                 });
+
+                // Inject service type radios into the options container
+                const fs = document.createElement('fieldset');
+                fs.style.border = 'none';
+                fs.style.padding = '0';
+                const lg = document.createElement('label');
+                lg.style.paddingTop = '12px';
+                lg.style.borderTop = '1px solid #ccc';
+                lg.style.fontWeight = '600';
+                lg.textContent = 'Service Type';
+                fs.appendChild(lg);
+
+                const lblWalk = document.createElement('label');
+                const rWalk = document.createElement('input');
+                rWalk.type = 'radio'; rWalk.name = 'serviceType'; rWalk.value = 'walkin'; rWalk.checked = true;
+                lblWalk.appendChild(rWalk);
+                lblWalk.appendChild(document.createTextNode(' Walk-in (no extra cost)'));
+                fs.appendChild(lblWalk);
+
+                const lblHome = document.createElement('label');
+                const rHome = document.createElement('input');
+                rHome.type = 'radio'; rHome.name = 'serviceType'; rHome.value = 'home';
+                lblHome.appendChild(rHome);
+                lblHome.appendChild(document.createTextNode(' Home Service (extra charge applies)'));
+                fs.appendChild(lblHome);
+
+                serviceOptions.appendChild(fs);
+                    // Create and append homeDetails container inside serviceOptions
+                    const hd = document.createElement('div');
+                    hd.id = 'homeDetails';
+                    hd.style.display = 'none';
+                    hd.style.marginTop = '8px';
+                    hd.style.borderTop = '1px solid #ccc';
+
+                    const homeLabel = document.createElement('label');
+                    homeLabel.htmlFor = 'homeLocation';
+                    homeLabel.textContent = 'Home Service Location';
+                    hd.appendChild(homeLabel);
+
+                    const select = document.createElement('select');
+                    select.id = 'homeLocation';
+                    select.name = 'homeLocation';
+                    const opt1 = document.createElement('option'); opt1.value = 'within'; opt1.textContent = 'Within Accra (GHS 100)';
+                    const opt2 = document.createElement('option'); opt2.value = 'outside'; opt2.textContent = 'Outside Accra (GHS 200)';
+                    select.appendChild(opt1); select.appendChild(opt2);
+                    hd.appendChild(select);
+
+                    const note = document.createElement('p');
+                    note.textContent = 'Note: Home service charges do not include the cost of transport. Transport will be charged extra.';
+                    hd.appendChild(note);
+
+                    serviceOptions.appendChild(hd);
+
+                    // assign to outer-scope variables so other code can use them
+                    homeDetails = document.getElementById('homeDetails');
+                    homeLocation = document.getElementById('homeLocation');
+
+                    // attach listener for homeLocation changes
+                    if (homeLocation) {
+                        homeLocation.addEventListener('change', () => {
+                            const selectedRadio = document.querySelector('input[name="serviceOption"]:checked');
+                            const optionIndex = selectedRadio ? parseInt(selectedRadio.value) : 0;
+                            const selectedOpt = services[currentServiceIndex] ? services[currentServiceIndex].options[optionIndex] : null;
+                            const currentServiceType = document.querySelector('input[name="serviceType"]:checked')?.value || 'walkin';
+                            const loc = homeLocation.value;
+                            const hc = loc === 'within' ? 100 : 200;
+                            if (selectedOpt) updateSummaryBar(selectedOpt, currentServiceType, hc);
+                        });
+                    }
 
                 // Set initial selected option
                 const selectedOpt = service.options[0];
-                selectedOption.textContent = `Selected: ${selectedOpt.name} - GHS ${selectedOpt.price}`;
+                updateSummaryBar(selectedOpt, 'walkin', 0);
 
                 bookingForm.style.display = 'block'; // Since first is selected
                 serviceOverlay.classList.add('active');
+                // Reset service type to walk-in and hide home details
+                const walkinRadio = document.querySelector('input[name="serviceType"][value="walkin"]');
+                if (walkinRadio) walkinRadio.checked = true;
+                if (homeDetails) homeDetails.style.display = 'none';
             });
         });
 
+        // Service options container handles both option and serviceType changes (delegation)
         serviceOptions.addEventListener('change', (e) => {
-            if (e.target.type === 'radio') {
+            // service option selected
+            if (e.target.name === 'serviceOption') {
                 const optionIndex = parseInt(e.target.value);
                 const selectedOpt = services[currentServiceIndex].options[optionIndex];
-                selectedOption.textContent = `Selected: ${selectedOpt.name} - GHS ${selectedOpt.price}`;
+                const currentServiceType = document.querySelector('input[name="serviceType"]:checked')?.value || 'walkin';
+                let hc = 0;
+                if (currentServiceType === 'home') {
+                    const loc = (homeLocation && homeLocation.value) ? homeLocation.value : 'within';
+                    hc = loc === 'within' ? 100 : 200;
+                }
+                updateSummaryBar(selectedOpt, currentServiceType, hc);
+                return;
+            }
+
+            // service type changed (walkin/home)
+            if (e.target.name === 'serviceType') {
+                const serviceTypeValue = e.target.value;
+                if (serviceTypeValue === 'home') {
+                    if (homeDetails) homeDetails.style.display = 'block';
+                } else {
+                    if (homeDetails) homeDetails.style.display = 'none';
+                }
+                const selectedRadio = document.querySelector('input[name="serviceOption"]:checked');
+                const optionIndex = selectedRadio ? parseInt(selectedRadio.value) : 0;
+                const selectedOpt = services[currentServiceIndex] ? services[currentServiceIndex].options[optionIndex] : null;
+                const loc = (homeLocation && homeLocation.value) ? homeLocation.value : 'within';
+                const hc = serviceTypeValue === 'home' ? (loc === 'within' ? 100 : 200) : 0;
+                if (selectedOpt) updateSummaryBar(selectedOpt, serviceTypeValue, hc);
             }
         });
+        
+
+        // Update summary when home location changes
+        if (homeLocation) {
+            homeLocation.addEventListener('change', () => {
+                const selectedRadio = document.querySelector('input[name="serviceOption"]:checked');
+                const optionIndex = selectedRadio ? parseInt(selectedRadio.value) : 0;
+                const selectedOpt = services[currentServiceIndex] ? services[currentServiceIndex].options[optionIndex] : null;
+                const currentServiceType = document.querySelector('input[name="serviceType"]:checked')?.value || 'walkin';
+                const loc = homeLocation.value;
+                const hc = loc === 'within' ? 100 : 200;
+                if (selectedOpt) updateSummaryBar(selectedOpt, currentServiceType, hc);
+            });
+        }
 
         serviceCloseBtn.addEventListener('click', () => {
             serviceOverlay.classList.remove('active');
@@ -539,7 +694,23 @@
                 return;
             }
             const optionIndex = parseInt(selectedRadio.value);
-            const selectedOption = services[currentServiceIndex].options[optionIndex];
+            const chosenOption = services[currentServiceIndex].options[optionIndex];
+
+            // Determine service type and any home service charge
+            const serviceType = document.querySelector('input[name="serviceType"]:checked')?.value || 'walkin';
+            let homeCharge = 0;
+            let homeChargeNote = '';
+            if (serviceType === 'home') {
+                const loc = (homeLocation && homeLocation.value) ? homeLocation.value : 'within';
+                if (loc === 'within') {
+                    homeCharge = 100;
+                } else {
+                    homeCharge = 200;
+                }
+                homeChargeNote = 'Home service charges do not include the cost of transport. Transport will be charged extra.';
+            }
+
+            const totalPrice = chosenOption.price + homeCharge;
 
             const submitBtn = serviceForm.querySelector('button[type="submit"]');
             submitBtn.disabled = true;
@@ -547,25 +718,43 @@
 
             const templateParams = {
                 message: `
-                    Service: ${services[currentServiceIndex].name}
-                    Option: ${selectedOption.name} - GHS ${selectedOption.price}
                     Customer Name: ${document.getElementById('bookName').value}
                     Customer Email: ${document.getElementById('bookEmail').value}
                     Customer Phone: ${document.getElementById('bookPhone').value}
                     Preferred Date: ${document.getElementById('bookDate').value}
+
+                    Service: ${services[currentServiceIndex].name}
+
+                    Option: ${chosenOption.name} - GHS ${chosenOption.price}
+                    Service Type: ${serviceType === 'home' ? 'Home Service' : 'Walk-in'}
+                    Home Service Charge: GHS ${homeCharge}
+                    Total (excl. transport): GHS ${totalPrice}
                 `
             };
 
             const customerParams = {
                 message: `
                     Hello ${document.getElementById('bookName').value},
-                    Your request for ${services[currentServiceIndex].name} with the option: ${selectedOption.name} - GHS ${selectedOption.price} has been received.
+
+                    Your request for my ${services[currentServiceIndex].name} service has been received.
+
+                    Here is a review of your details:
+                    Option: ${chosenOption.name} 
+                    Price: GHS ${chosenOption.price}
+
+                    Service Type: ${serviceType === 'home' ? 'Home Service' : 'Walk-in'}
+                    ${serviceType === 'home' ? `Home service charge: GHS ${homeCharge}.` : ''}
+                    Total (excl. transport): GHS ${totalPrice}
+
+                    ${homeChargeNote}
+
                     I will contact you shortly to confirm the details.
-                    Thank you for choosing The Hennapreneur
+                    Thank you for choosing The Hennapreneur.
 
                     Best regards,
                     Ayisha Inusah
-                `
+                `,
+                customer_email: document.getElementById('bookEmail').value
             }
 
             // Send email to business owner
@@ -582,7 +771,16 @@
                     document.getElementById('successPopupOverlay').classList.add('active');
                     serviceOverlay.classList.remove('active');
                     serviceForm.reset();
+                    // Reset service type UI (these live outside the form)
+                    const walkinRadioAfter = document.querySelector('input[name="serviceType"][value="walkin"]');
+                    if (walkinRadioAfter) walkinRadioAfter.checked = true;
+                    if (homeDetails) {
+                        homeDetails.style.display = 'none';
+                        if (homeLocation) homeLocation.selectedIndex = 0;
+                    }
                     bookingForm.style.display = 'none';
+                    // Reset summary bar
+                    updateSummaryBar(null);
                     submitBtn.disabled = false;
                     submitBtn.textContent = 'Book Now';
                 }, (error) => {
@@ -631,12 +829,14 @@
 
             const templateParams = {
                 message: `
+                    New Course Signup Details:
+
                     Service: Henna Art Course
-                    Customer Name: ${name}
-                    Customer Age: ${age}
-                    Customer Email: ${email}
-                    Customer Phone: ${phone}
-                    Customer Address: ${address}
+                    Student's Name: ${name}
+                    Student's Age: ${age}
+                    Student's Email: ${email}
+                    Student's Phone: ${phone}
+                    Student's Location: ${address}
                 `
             };
 
