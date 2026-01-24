@@ -332,6 +332,23 @@ nav {
     margin: 20px auto;
 }
 
+.price-banner {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 95%;
+    background-color: var(--secondary-color);
+    padding: 10px 20px;
+    margin: 20px auto;
+    border-radius: 8px;
+}
+
+.price-banner hr {
+    flex-grow: 1;
+    border: none;
+    border-top: 1px solid var(--accent-color);
+}
+
 .signup-card {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
