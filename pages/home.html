@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The Hennapreneur - Professional henna artist. Book henna sessions, shop products, and learn design.">
+  <meta name="keywords" content="henna, booking, products, course, design">
+  <meta name="author" content="The Hennapreneur">
+  <title>The Hennapreneur - Home</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <p class="logo">The Hennapreneur</p>
+    <ul class="nav-links">
+      <li><a href="./home.html" class="active">Home</a></li>
+      <li><a href="./henna.html">Henna</a></li>
+      <li><a href="./products.html">Products</a></li>
+      <li><a href="./about.html">About</a></li>
+      <li><a href="./contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-icons">
+      <div class="cart-icon">
+        <img src="../assets/icons/shopping-cart.svg" alt="icon" style="width: 24px; height: 24px;">
+        <span class="cart-count">0</span>
+      </div>
+      <div class="hamburger">
+        <img src="../assets/icons/menu-burger.svg" alt="icon" style="width: 24px; height: 24px;">
+      </div>
+    </div>
+  </nav>
+
+  <!-- Cart Sidebar -->
+  <div class="cart-sidebar">
+    <div class="cart-header">
+      <h2 class="cart-title">Shopping Cart</h2>
+      <button class="close-btn">✕</button>
+    </div>
+    <div class="cart-items"></div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Total:</span>
+        <span>GHS 0.00</span>
+      </div>
+      <button class="checkout-btn" onclick="proceedToCheckout()">Proceed to Checkout</button>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-header">
+      <div><h1>T</h1></div>
+      <div><h1>H</h1></div>
+      <div><h1>E</h1></div>
+      <div><h1> </h1></div>
+      <div><h1>H</h1></div>
+      <div><h1>E</h1></div>
+      <div><h1>N</h1></div>
+      <div><h1>N</h1></div>
+      <div><h1>A</h1></div>
+      <div><h1>P</h1></div>
+      <div><h1>R</h1></div>
+      <div><h1>E</h1></div>
+      <div><h1>N</h1></div>
+      <div><h1>E</h1></div>
+      <div><h1>U</h1></div>
+      <div><h1>R</h1></div>
+    </div>
+    <div class="hero-header-mobile">
+      <h1>Authentic Artistry Blending Heritage With Contemporary Style.</h1>
+    </div>
+    <div class="hero-content">
+      <p>Rooted in centuries of sacred tradition, yet breathing with modern soul — every design I create is a living bridge between heritage and today. Intricate, intentional, and entirely yours. Let your skin tell a story that honors the past while celebrating who you are right now.</p>
+      <button class="hero-cta" onclick="document.location='./henna.html'">Explore Designs</button>
+    </div>
+  </section>
+
+  <!-- Featured Henna Designs -->
+  <section id="featured-henna">
+    <h1 class="section-title">Featured Designs</h1>
+    <p class="section-subtitle">Explore our most popular henna designs</p>
+    <div class="featured-grid" id="featuredHenna"></div>
+    <a href="./henna.html" class="cta-link"><button class="primary-btn">View All Designs</button></a>
+  </section>
+
+  <!-- Featured Products -->
+  <section id="featured-products">
+    <h1 class="section-title">Premium Products</h1>
+    <p class="section-subtitle">Everything you need for perfect henna application</p>
+    <div class="featured-grid" id="featuredProducts"></div>
+    <a href="./products.html" class="cta-link"><button class="primary-btn">View All Products</button></a>
+  </section>
+
+  <!-- Course Promotion Section -->
+  <section id="course-section">
+    <div class="container">
+      <h2 class="section-title">Unlock Your Creative Potential: Learn The Art Of Henna!</h2>
+      <p class="section-subtitle">Transform your art into passion. Join my 6-month intensive course and master the art of henna design.</p>
+      <hr style="height: .5px; width: 100%; margin: 20px auto; background-color: #6b6b6b; border: none;">
+      <div class="course-details">
+        <div>
+          <h3 style="font-size: 1.8rem; margin-bottom: 1rem;">Henna Design Mastery Course</h3>
+          <p>
+            Ready to dive into the world of henna? Whether you're a beginner or looking to refine your skills, this course will guide you through the fundamentals of henna artistry. From mastering techniques and tools to designing stunning, custom patterns, you'll gain the confidence to create your own beautiful pieces. Learn not just the art, but also the cultural significance behind each design. By the end of the course, you’ll be equipped to create intricate henna art for any occasion. Sign up now and start your creative journey today!
+          </p>
+          <ul style="list-style: none; color: var(--light-text); margin-bottom: 2rem;">
+            <li style="margin-bottom: 0.8rem;">✓ 6 months of comprehensive training</li>
+            <li style="margin-bottom: 0.8rem;">✓ Certificate of completion</li>
+          </ul>
+          <p style="font-size: 2rem; font-weight: 600; color: var(--primary-color); margin-bottom: 1rem;">GHS 1,500</p>
+          <button class="hero-cta" onclick="openModal('courseModal')">Sign Up Now</button>
+        </div>
+        <img class="henna-course-img" src="../assets/images/henna_course.png" alt="Henna Design Mastery Course">
+      </div>
+    </div>
+  </section>
+
+  <!-- Client Reviews Section 
+  <section id="reviews">
+    <h2 class="section-title">Client Reviews</h2>
+    <p class="section-subtitle">See what my clients have to say</p>
+    <div class="reviews-grid" id="reviewsContainer"></div>
+  </section> -->
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>The Hennapreneur</h4>
+        <p style="color: #ccc; line-height: 1.6;">
+          Professional henna artist dedicated to creating beautiful, lasting henna designs for all occasions.
+        </p>
+        <div class="social-links">
+          <a href="https://www.snapchat.com/@hennapreneur" target="_blank" aria-label="Snap Chat"><img src="../assets/images/snap_chat_logo.png" alt="snap chat logo" height="50" width="50"></a>
+          <a href="https://www.instagram.com/yhishatelegance?igsh=MTh1eW02d2oxbDV4bA%3D%3D" target="_blank" aria-label="Instagram"><img src="../assets/images/instagram_logo.png" alt="instagram logo" height="50" width="50"></a>
+          <a href="#" target="_blank" aria-label="Tik Tok"><img src="../assets/images/tiktok_logo.png" alt="tiktok logo" height="50" width="50"></a>
+        </div>
+      </div> 
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="./home.html">Home</a></li>
+          <li><a href="./about.html">About</a></li>
+          <li><a href="./henna.html">Henna Designs</a></li>
+          <li><a href="./products.html">Products</a></li>
+          <li><a href="./contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Services</h4>
+        <ul class="footer-links">
+          <li><a href="./henna.html">Book a Session</a></li>
+          <li><a href="./products.html">Shop Products</a></li>
+          <li><a href="#course-section">Henna Course</a></li>
+          <li><a href="./contact.html">Get in Touch</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Contact Info</h4>
+        <p style="color: #ccc; margin-bottom: 0.5rem;">ayishainusah037@gmail.com</p>
+        <p style="color: #ccc; margin-bottom: 0.5rem;">050 473 2494 / 053 264 1071</p>
+        <p style="color: #ccc;">Dansoman, Accra, Ghana</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 The Hennapreneur. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Course Sign Up Modal -->
+  <div id="courseModal" class="modal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal('courseModal')">✕</button>
+      <h2>Sign Up for Henna Design Mastery</h2>
+      <form data-form-type="course" style="margin-top: 1.5rem;">
+        <div class="form-group">
+          <label for="courseName">Full Name *</label>
+          <input type="text" id="courseName" name="name" required>
+          <div class="form-error"></div>
+        </div>
+        <div class="form-group">
+          <label for="courseEmail">Email Address *</label>
+          <input type="email" id="courseEmail" name="email" required>
+          <div class="form-error"></div>
+        </div>
+        <div class="form-group">
+          <label for="coursePhone">Phone Number</label>
+          <input type="tel" id="coursePhone" name="phone">
+          <div class="form-error"></div>
+        </div>
+        <div class="form-group">
+          <label for="courseExperience">Henna Experience *</label>
+          <select id="courseExperience" name="experience" required>
+            <option value="">Select experience level</option>
+            <option value="beginner">Beginner</option>
+            <option value="intermediate">Intermediate</option>
+            <option value="advanced">Advanced</option>
+          </select>
+          <div class="form-error"></div>
+        </div>
+        <div class="form-group">
+          <label for="courseMessage">Why do you want to learn henna?</label>
+          <textarea id="courseMessage" name="message"></textarea>
+          <div class="form-error"></div>
+        </div>
+        <div class="form-success"></div>
+        <button type="submit" class="form-submit">Enroll Now</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js/dist/umd/supabase.min.js"></script>
+  <script src="../js/config.js"></script>
+  <script src="../js/supabase.js"></script>
+  <script src="../js/email.js"></script>
+  <script src="../js/payment.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/animations.js"></script>
+  <script>
+    // Load featured henna designs
+    async function loadFeaturedContent() {
+      console.log('loadFeaturedContent: Waiting for data...');
+      
+      // Wait for both henna designs AND products to be loaded
+      let attempts = 0;
+      while (attempts < 100) {
+        const hennaReady = window.data.hennaDesigns && Array.isArray(window.data.hennaDesigns) && window.data.hennaDesigns.length > 0;
+        const productsReady = window.data.products && Array.isArray(window.data.products) && window.data.products.length > 0;
+        
+        if (hennaReady && productsReady) {
+          console.log('loadFeaturedContent: All data ready - henna:', window.data.hennaDesigns.length, 'products:', window.data.products.length);
+          break;
+        }
+        await new Promise(resolve => setTimeout(resolve, 100));
+        attempts++;
+      }
+
+      if (attempts >= 100) {
+        console.warn('loadFeaturedContent: Timed out waiting for data, rendering with available data');
+      }
+
+      // Featured Henna - show 4 items on 601px–800px, otherwise 3 items
+      const featuredHennaContainer = document.getElementById('featuredHenna');
+      const featuredHennaCount = window.innerWidth >= 601 && window.innerWidth <= 800 ? 4 : 3;
+      const featuredHenna = window.data.hennaDesigns.slice(0, featuredHennaCount);
+      
+      console.log('loadFeaturedContent: Rendering', featuredHenna.length, 'featured henna items for width', window.innerWidth);
+      
+      if (featuredHenna.length === 0) {
+        featuredHennaContainer.innerHTML = '<p style="grid-column: 1/-1; text-align: center;">No henna designs available</p>';
+      } else {
+        featuredHennaContainer.innerHTML = featuredHenna.map(henna => `
+          <div class="card">
+            <div class="card-image">
+              ${henna.image ? `<img src="${henna.image}" alt="${henna.name}">` : ''}
+            </div>
+            <div class="card-content">
+              <div class="card-category">${henna.category || 'Henna'}</div>
+              <h3 class="card-title">${henna.name}</h3>
+              <p class="card-description">${henna.description.substring(0, 80)}...</p>
+              <div class="card-price">${henna.variation1_price !== undefined ? formatCurrency(henna.variation1_price) : getHennaPriceLabel(henna)}</div>
+              <div class="card-footer">
+                <button class="view-btn" onclick="window.location='./henna-detail.html?id=${henna.id}'">View</button>
+              </div>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      // Featured Products
+      const featuredProductsContainer = document.getElementById('featuredProducts');
+      const featuredProducts = (window.data.products || []).filter(p => p.featured).slice(0, 6);
+      
+      console.log('loadFeaturedContent: Rendering', featuredProducts.length, 'featured products');
+      
+      featuredProductsContainer.innerHTML = featuredProducts.map(product => `
+        <div class="card">
+          <div class="card-image">
+            ${product.image ? `<img src="${product.image}" alt="${product.name || 'Product'}">` : ''}
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">${product.name || 'Unnamed Product'}</h3>
+            <p class="card-description">${product.description ? product.description.substring(0, 80) + '...' : ''}</p>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+              <div class="card-price">GHS ${(product.pricing?.single || product.price || 0).toFixed(2)}</div>
+            </div>
+            <div class="card-footer">
+              <button class="view-btn" onclick="window.location='./product-detail.html?id=${product.id}'">View</button>
+              <button class="add-cart-btn" onclick="addToCart({id: ${product.id}, name: '${(product.name || 'Product').replace(/'/g, "\\'")}', price: ${product.pricing?.single || product.price || 0}, type: 'product', image: '${(product.image || '').replace(/'/g, "\\'")}'})">Add</button>
+            </div>
+          </div>
+        </div>
+      `).join('');
+
+      // Reviews
+      const reviewsContainer = document.getElementById('reviewsContainer');
+      const reviews = window.data.reviews || [];
+      
+      reviewsContainer.innerHTML = reviews.map(review => `
+        <div class="review-card">
+          <div class="review-header">
+            <div class="review-avatar">${review.name.charAt(0)}</div>
+            <div class="review-info">
+              <h4>${review.name}</h4>
+              <div class="review-rating">${'⭐'.repeat(review.rating)}</div>
+            </div>
+          </div>
+          <p class="review-text">"${review.comment}"</p>
+        </div>
+      `).join('');
+    }
+
+    loadFeaturedContent();
+  </script>
+</body>
+</html>

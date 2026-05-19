@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact The Hennapreneur - Get in touch for bookings, inquiries, or collaborations">
+  <meta name="keywords" content="contact, henna booking, inquiry, collaboration">
+  <title>Contact - The Hennapreneur</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <p class="logo">The Hennapreneur</p>
+    <ul class="nav-links">
+      <li><a href="./home.html">Home</a></li>
+      <li><a href="./henna.html">Henna</a></li>
+      <li><a href="./products.html">Products</a></li>
+      <li><a href="./about.html">About</a></li>
+      <li><a href="./contact.html" class="active">Contact</a></li>
+    </ul>
+    <div class="nav-icons">
+      <div class="cart-icon">
+        <img src="../assets/icons/shopping-cart.svg" alt="icon" style="width: 24px; height: 24px;">
+        <span class="cart-count">0</span>
+      </div>
+      <div class="hamburger">
+        <img src="../assets/icons/menu-burger.svg" alt="icon" style="width: 24px; height: 24px;">
+      </div>
+    </div>
+  </nav>
+
+  <!-- Cart Sidebar -->
+  <div class="cart-sidebar">
+    <div class="cart-header">
+      <h2 class="cart-title">Shopping Cart</h2>
+      <button class="close-btn">✕</button>
+    </div>
+    <div class="cart-items"></div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Total:</span>
+        <span>$0.00</span>
+      </div>
+      <button class="checkout-btn" onclick="proceedToCheckout()">Proceed to Checkout</button>
+    </div>
+  </div>
+
+  <!-- Contact Hero -->
+  <section style="background: linear-gradient(135deg, var(--primary-color) 0%, #f59999 100%); color: white; padding: 100px 2rem; text-align: center;">
+    <h1 style="font-size: 3rem; margin-bottom: 1rem; font-weight: 300;">Get In Touch</h1>
+    <p style="font-size: 1.2rem; opacity: 0.9;">We'd love to hear from you. Reach out for bookings, inquiries, or just to say hello!</p>
+  </section>
+
+  <!-- Contact Content -->
+  <section class="contact-content">
+    <!-- Contact Form -->
+    <div>
+      <h2 style="font-size: 1.8rem; margin-bottom: 1.5rem;">Send us a Message</h2>
+      <form data-form-type="contact">
+        <div class="form-group">
+          <label for="contactName">Full Name *</label>
+          <input type="text" id="contactName" name="name" required>
+          <div class="form-error"></div>
+        </div>
+        <div class="form-group">
+          <label for="contactEmail">Email Address *</label>
+          <input type="email" id="contactEmail" name="email" required>
+          <div class="form-error"></div>
+        </div>
+        <div class="form-group">
+          <label for="contactPhone">Phone Number</label>
+          <input type="tel" id="contactPhone" name="phone">
+          <div class="form-error"></div>
+        </div>
+        <div class="form-group">
+          <label for="contactSubject">Subject *</label>
+          <input type="text" id="contactSubject" name="subject" required>
+          <div class="form-error"></div>
+        </div>
+        <div class="form-group">
+          <label for="contactMessage">Message *</label>
+          <textarea id="contactMessage" name="message" required placeholder="Tell us how we can help..."></textarea>
+          <div class="form-error"></div>
+        </div>
+        <div class="form-success"></div>
+        <button type="submit" class="form-submit">Send Message</button>
+      </form>
+    </div>
+
+    <!-- Contact Info -->
+    <div>
+      <h2 style="font-size: 1.8rem; margin-bottom: 1.5rem;">Contact Information</h2>
+      
+      <div style="margin-bottom: 2rem;">
+        <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem; color: var(--primary-color);">📧 Email</h3>
+        <p style="color: var(--light-text); line-height: 1.6;">
+          ayishainusah037@gmail.com
+        </p>
+      </div>
+
+      <div style="margin-bottom: 2rem;">
+        <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem; color: var(--primary-color);">📱 Phone</h3>
+        <p style="color: var(--light-text); line-height: 1.6;">
+          050 473 2494 / 053 264 1071<br>
+          Monday - Friday: 9AM - 6PM<br>
+          Saturday: 10AM - 4PM<br>
+          Sunday: Closed
+        </p>
+      </div>
+
+      <div style="margin-bottom: 2rem;">
+        <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem; color: var(--primary-color);">📍 Location</h3>
+        <p style="color: var(--light-text); line-height: 1.6;">
+          Woowoti Road 71<br>
+          Dansoman, Accra<br>
+          Ghana
+        </p>
+      </div>
+
+      
+      <div style="background: linear-gradient(135deg, var(--primary-color) 0%, #f59999 100%); padding: 2rem; border-radius: 10px; color: white;">
+        <h3 style="margin-bottom: 0.5rem;">Response Time</h3>
+        <p style="opacity: 0.9; margin-bottom: 1rem;">
+          We typically respond to all inquiries within 24 hours during business days. For urgent matters, please call us directly.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section style="background: #f9f9f9;">
+    <h2 class="section-title">Frequently Asked Questions</h2>
+    
+    <div style="max-width: 900px; margin: 0 auto;">
+      <div style="margin-bottom: 1.5rem; padding: 1.5rem; background: white; border-radius: 10px; border-left: 4px solid var(--primary-color);">
+        <h3 style="margin-bottom: 0.5rem;">How long does henna last?</h3>
+        <p style="color: var(--light-text);">Henna typically lasts 1-3 weeks depending on the body part and aftercare. Hands usually show the deepest color and last the longest.</p>
+      </div>
+
+      <div style="margin-bottom: 1.5rem; padding: 1.5rem; background: white; border-radius: 10px; border-left: 4px solid var(--primary-color);">
+        <h3 style="margin-bottom: 0.5rem;">What's your cancellation policy?</h3>
+        <p style="color: var(--light-text);">You can cancel or reschedule up to 24 hours before your booking without charge. Cancellations within 24 hours may incur a 50% fee.</p>
+      </div>
+
+      <div style="margin-bottom: 1.5rem; padding: 1.5rem; background: white; border-radius: 10px; border-left: 4px solid var(--primary-color);">
+        <h3 style="margin-bottom: 0.5rem;">Do you offer custom designs?</h3>
+        <p style="color: var(--light-text);">Yes! We offer custom henna designs tailored to your preferences. Please reach out with your ideas and we'll create something beautiful for you.</p>
+      </div>
+
+      <div style="margin-bottom: 1.5rem; padding: 1.5rem; background: white; border-radius: 10px; border-left: 4px solid var(--primary-color);">
+        <h3 style="margin-bottom: 0.5rem;">Are your products organic?</h3>
+        <p style="color: var(--light-text);">All our henna products are made from 100% natural, organic ingredients with no harmful chemicals or additives. They're safe for all skin types.</p>
+      </div>
+
+      <div style="margin-bottom: 1.5rem; padding: 1.5rem; background: white; border-radius: 10px; border-left: 4px solid var(--primary-color);">
+        <h3 style="margin-bottom: 0.5rem;">How do I enroll in the online course?</h3>
+        <p style="color: var(--light-text);">Visit our <a href="./home.html#course-section" style="color: var(--primary-color); font-weight: 500;">course section</a> and click "Sign Up Now". You'll receive access to all course materials immediately after enrollment.</p>
+      </div>
+
+      <div style="margin-bottom: 1.5rem; padding: 1.5rem; background: white; border-radius: 10px; border-left: 4px solid var(--primary-color);">
+        <h3 style="margin-bottom: 0.5rem;">What payment methods do you accept?</h3>
+        <p style="color: var(--light-text);">We accept all major credit cards, PayPal, and bank transfers. All payments are secure and encrypted.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section style="background: linear-gradient(135deg, var(--primary-color) 0%, #f59999 100%); color: white; text-align: center; padding: 80px 2rem;">
+    <h2 style="font-size: 2.5rem; margin-bottom: 1rem; font-weight: 300;">Ready to Book Your Henna Session?</h2>
+    <p style="font-size: 1.1rem; margin-bottom: 2rem; opacity: 0.9;">Browse our designs and reserve your spot today</p>
+    <button class="hero-cta" onclick="window.location='./henna.html'" style="background: white; color: var(--primary-color);">Browse Designs</button>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>The Hennapreneur</h4>
+        <p style="color: #ccc; line-height: 1.6;">
+          Professional henna artist dedicated to creating beautiful, lasting henna designs for all occasions.
+        </p>
+        <div class="social-links">
+          <a href="https://www.snapchat.com/@hennapreneur" target="_blank" aria-label="Snap Chat"><img src="../assets/images/snap_chat_logo.png" alt="snap chat logo" height="50" width="50"></a>
+          <a href="https://www.instagram.com/yhishatelegance?igsh=MTh1eW02d2oxbDV4bA%3D%3D" target="_blank" aria-label="Instagram"><img src="../assets/images/instagram_logo.png" alt="instagram logo" height="50" width="50"></a>
+          <a href="#" target="_blank" aria-label="Tik Tok"><img src="../assets/images/tiktok_logo.png" alt="tiktok logo" height="50" width="50"></a>
+        </div>
+      </div> 
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="./home.html">Home</a></li>
+          <li><a href="./about.html">About</a></li>
+          <li><a href="./henna.html">Henna Designs</a></li>
+          <li><a href="./products.html">Products</a></li>
+          <li><a href="./contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Services</h4>
+        <ul class="footer-links">
+          <li><a href="./henna.html">Book a Session</a></li>
+          <li><a href="./products.html">Shop Products</a></li>
+          <li><a href="#course-section">Henna Course</a></li>
+          <li><a href="./contact.html">Get in Touch</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Contact Info</h4>
+        <p style="color: #ccc; margin-bottom: 0.5rem;">ayishainusah037@gmail.com</p>
+        <p style="color: #ccc; margin-bottom: 0.5rem;">050 473 2494 / 053 264 1071</p>
+        <p style="color: #ccc;">Dansoman, Accra, Ghana</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 The Hennapreneur. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js/dist/umd/supabase.min.js"></script>
+  <script src="../js/config.js"></script>
+  <script src="../js/supabase.js"></script>
+  <script src="../js/email.js"></script>
+  <script src="../js/payment.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/animations.js"></script>
+</body>
+</html>

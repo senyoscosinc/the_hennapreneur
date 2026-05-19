@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Shop premium henna products - paste, tools, aftercare, and more">
+  <meta name="keywords" content="henna products, henna paste, henna tools, aftercare">
+  <title>Products - The Hennapreneur</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <p class="logo">The Hennapreneur</p>
+    <ul class="nav-links">
+      <li><a href="./home.html">Home</a></li>
+      <li><a href="./henna.html">Henna</a></li>
+      <li><a href="./products.html" class="active">Products</a></li>
+      <li><a href="./about.html">About</a></li>
+      <li><a href="./contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-icons">
+      <div class="cart-icon">
+        <img src="../assets/icons/shopping-cart.svg" alt="icon" style="width: 24px; height: 24px;">
+        <span class="cart-count">0</span>
+      </div>
+      <div class="hamburger">
+        <img src="../assets/icons/menu-burger.svg" alt="icon" style="width: 24px; height: 24px;">
+      </div>
+    </div>
+  </nav>
+
+  <!-- Cart Sidebar -->
+  <div class="cart-sidebar">
+    <div class="cart-header">
+      <h2 class="cart-title">Shopping Cart</h2>
+      <button class="close-btn">✕</button>
+    </div>
+    <div class="cart-items"></div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Total:</span>
+        <span>$0.00</span>
+      </div>
+      <button class="checkout-btn" onclick="proceedToCheckout()">Proceed to Checkout</button>
+    </div>
+  </div>
+
+  <!-- Page Header -->
+  <section class="page-header" style="background-image: url('../assets/images/henna_products.png');">
+    <div>
+      <h1>Shop Products</h1>
+      <p>Premium henna and professional tools for perfect application</p>
+    </div>
+  </section>
+
+  <!-- Filter Section -->
+  <section style="background: #f9f9f9; padding: 2rem;">
+    <div class="container text-center">
+       <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+         <button onclick="filterProducts('all')" class="filter-btn active" style="padding: 8px 16px; background: var(--primary-color); color: white; border: none; cursor: pointer; font-size: 0.9rem;">All</button>
+         <button onclick="filterProducts('Henna Cones')" class="filter-btn" style="padding: 8px 16px; background: white; color: var(--primary-color); border: 1px solid var(--primary-color); cursor: pointer; font-size: 0.9rem;">Henna Cones</button>
+         <button onclick="filterProducts('Henna Dye')" class="filter-btn" style="padding: 8px 16px; background: white; color: var(--primary-color); border: 1px solid var(--primary-color); cursor: pointer; font-size: 0.9rem;">Henna Dye</button>
+         <button onclick="filterProducts('Henna Stickers')" class="filter-btn" style="padding: 8px 16px; background: white; color: var(--primary-color); border: 1px solid var(--primary-color); cursor: pointer; font-size: 0.9rem;">Henna Stickers</button>
+         <button onclick="filterProducts('Hijabs')" class="filter-btn" style="padding: 8px 16px; background: white; color: var(--primary-color); border: 1px solid var(--primary-color); cursor: pointer; font-size: 0.9rem;">Hijabs</button>
+         <button onclick="filterProducts('Henna Products')" class="filter-btn" style="padding: 8px 16px; background: white; color: var(--primary-color); border: 1px solid var(--primary-color); cursor: pointer; font-size: 0.9rem;">Henna Products</button>
+       </div>
+    </div>
+  </section>
+
+  <!-- Products Grid -->
+  <section>
+    <div class="grid" id="productsGrid"></div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>The Hennapreneur</h4>
+        <p style="color: #ccc; line-height: 1.6;">
+          Professional henna artist dedicated to creating beautiful, lasting henna designs for all occasions.
+        </p>
+        <div class="social-links">
+          <a href="https://www.snapchat.com/@hennapreneur" target="_blank" aria-label="Snap Chat"><img src="../assets/images/snap_chat_logo.png" alt="snap chat logo" height="50" width="50"></a>
+          <a href="https://www.instagram.com/yhishatelegance?igsh=MTh1eW02d2oxbDV4bA%3D%3D" target="_blank" aria-label="Instagram"><img src="../assets/images/instagram_logo.png" alt="instagram logo" height="50" width="50"></a>
+          <a href="#" target="_blank" aria-label="Tik Tok"><img src="../assets/images/tiktok_logo.png" alt="tiktok logo" height="50" width="50"></a>
+        </div>
+      </div> 
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="./home.html">Home</a></li>
+          <li><a href="./about.html">About</a></li>
+          <li><a href="./henna.html">Henna Designs</a></li>
+          <li><a href="./products.html">Products</a></li>
+          <li><a href="./contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Services</h4>
+        <ul class="footer-links">
+          <li><a href="./henna.html">Book a Session</a></li>
+          <li><a href="./products.html">Shop Products</a></li>
+          <li><a href="#course-section">Henna Course</a></li>
+          <li><a href="./contact.html">Get in Touch</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Contact Info</h4>
+        <p style="color: #ccc; margin-bottom: 0.5rem;">ayishainusah037@gmail.com</p>
+        <p style="color: #ccc; margin-bottom: 0.5rem;">050 473 2494 / 053 264 1071</p>
+        <p style="color: #ccc;">Dansoman, Accra, Ghana</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 The Hennapreneur. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js/dist/umd/supabase.min.js"></script>
+  <script src="../js/config.js"></script>
+  <script src="../js/supabase.js"></script>
+  <script src="../js/email.js"></script>
+  <script src="../js/payment.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/animations.js"></script>
+  <script>
+    let currentFilter = 'all';
+    let filteredProducts = [];
+    let dataReady = false;
+
+    async function loadProducts() {
+      console.log('loadProducts: Waiting for products data to load...');
+      
+      // Wait for data to be loaded and have products
+      let attempts = 0;
+      while (!dataReady && attempts < 100) {
+        if (window.data && Array.isArray(window.data.products) && window.data.products.length > 0) {
+          console.log('loadProducts: Data ready, rendering grid with', window.data.products.length, 'items');
+          dataReady = true;
+          break;
+        }
+        await new Promise(resolve => setTimeout(resolve, 100));
+        attempts++;
+      }
+
+      if (!dataReady) {
+        console.error('loadProducts: Data failed to load after waiting');
+        return;
+      }
+
+      filteredProducts = window.data.products;
+      renderProductsGrid();
+    }
+
+    function filterProducts(category) {
+      currentFilter = category;
+      
+      const buttons = document.querySelectorAll('.filter-btn');
+      buttons.forEach(btn => {
+        btn.style.background = 'white';
+        btn.style.color = 'var(--primary-color)';
+        btn.style.border = '2px solid var(--primary-color)';
+        const btnText = btn.textContent.trim();
+        if ((category === 'all' && btnText === 'All') || 
+            (category !== 'all' && btnText === category)) {
+          btn.style.background = 'var(--primary-color)';
+          btn.style.color = 'white';
+          btn.style.border = 'none';
+        }
+      });
+
+      if (category === 'all') {
+        filteredProducts = window.data.products;
+      } else {
+        filteredProducts = window.data.products.filter(p => p.category === category);
+      }
+
+      renderProductsGrid();
+    }
+
+    function escapeHtml(value) {
+      return String(value || '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    }
+
+    function renderProductsGrid() {
+      const productsGrid = document.getElementById('productsGrid');
+      
+      productsGrid.innerHTML = filteredProducts.map((product, index) => `
+        <div class="card">
+          <div class="card-image">
+            ${product.image ? `<img src="${escapeHtml(product.image)}" alt="${escapeHtml(product.name || 'Product')}">` : ''}
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">${escapeHtml(product.name || 'Unnamed Product')}</h3>
+            <p class="card-description">${escapeHtml(product.description || '')}</p>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+              <div class="card-price">GHS ${(product.pricing?.single || product.price || 0).toFixed(2)}</div>
+            </div>
+            <div class="card-footer">
+              <button class="view-btn" data-id="${escapeHtml(product.id)}">View</button>
+              <button class="add-cart-btn" data-index="${index}">Add</button>
+            </div>
+          </div>
+        </div>
+      `).join('');
+
+      attachProductEventHandlers();
+    }
+
+    function attachProductEventHandlers() {
+      document.querySelectorAll('.view-btn').forEach(button => {
+        button.addEventListener('click', () => {
+          window.location = `./product-detail.html?id=${encodeURIComponent(button.dataset.id)}`;
+        });
+      });
+
+      document.querySelectorAll('.add-cart-btn').forEach(button => {
+        button.addEventListener('click', () => {
+          const product = filteredProducts[Number(button.dataset.index)];
+          if (!product) return;
+          addToCart({
+            id: product.id,
+            name: product.name || 'Product',
+            price: product.pricing?.single || product.price || 0,
+            type: 'product',
+            category: product.category || 'Uncategorized',
+            image: product.image || ''
+          });
+        });
+      });
+    }
+
+    loadProducts();
+  </script>
+</body>
+</html>

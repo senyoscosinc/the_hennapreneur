@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About The Hennapreneur - Learn about our professional henna artist and services">
+  <meta name="keywords" content="henna artist, about, experience, professional">
+  <title>About - The Hennapreneur</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <p class="logo">The Hennapreneur</p>
+    <ul class="nav-links">
+      <li><a href="./home.html">Home</a></li>
+      <li><a href="./henna.html">Henna</a></li>
+      <li><a href="./products.html">Products</a></li>
+      <li><a href="./about.html" class="active">About</a></li>
+      <li><a href="./contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-icons">
+      <div class="cart-icon">
+        <img src="../assets/icons/shopping-cart.svg" alt="icon" style="width: 24px; height: 24px;">
+        <span class="cart-count">0</span>
+      </div>
+      <div class="hamburger">
+        <img src="../assets/icons/menu-burger.svg" alt="icon" style="width: 24px; height: 24px;">
+      </div>
+    </div>
+  </nav>
+
+  <!-- Cart Sidebar -->
+  <div class="cart-sidebar">
+    <div class="cart-header">
+      <h2 class="cart-title">Shopping Cart</h2>
+      <button class="close-btn">✕</button>
+    </div>
+    <div class="cart-items"></div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Total:</span>
+        <span>GHS 0.00</span>
+      </div>
+      <button class="checkout-btn" onclick="proceedToCheckout()">Proceed to Checkout</button>
+    </div>
+  </div>
+
+   <!-- Page Header -->
+  <section class="page-header" style="background-image: url('../assets/images/henna_products-02.png');">
+    <div>
+      <h1>About Me</h1>
+      <p>Professional Henna Artist & Designer</p>
+    </div>
+  </section>
+
+  <!-- About Content -->
+  <section class="about-content">
+    <div class="about-content-elements">
+      <div class="about-content-image">
+        <img src="../assets/images/ayisha_inusah.jpeg" alt="Ayisha Inusah - The Hennapreneur">
+      </div>
+      <div>
+        <h2 style="font-size: 2.2rem; margin-bottom: 1rem;">My Story</h2>
+        <p style="color: var(--light-text); line-height: 1.8; margin-bottom: 1rem;">
+          Hey there, and welcome to The Hennapreneur! I’m so excited you’re here. If you're looking for more than just a henna design—something that tells a story, reflects your personality, and makes you feel truly special—then you’ve come to the right place. 
+          <br><br>
+          Henna isn’t just art for me; it’s a way of connecting, expressing, and celebrating all the little moments that make life beautiful. Whether it’s a wedding, a festival, or just a spontaneous moment of creativity, I pour my heart into every design, crafting each pattern with you in mind. 
+          <br><br>
+          Every swirl, line, and dot is carefully created to make sure your henna is as unique as you are. At The Hennapreneur, I blend the deep-rooted traditions of mehndi with a fresh, modern twist. I use only the finest natural henna, so your skin gets not only beautiful art but something safe and nourishing too. 
+          <br><br>
+          It’s about more than just a temporary design—it’s about giving you an experience that feels as special as the moment you're celebrating. So, whether you're looking for something intricate, minimalist, bold, or delicate, I’m here to help you turn your vision into something unforgettable. Let’s create something beautiful together!
+        </p>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section style="background: #f9f9f9;">
+    <h2 class="section-title" style="margin-bottom: 50px;">My Services</h2>
+    <div class="grid">
+      <div class="card">
+        <div class="card-image">
+          <img src="../assets/images/henna.png" alt="henna design" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div class="card-content">
+          <h3 class="card-title">Henna Bookings</h3>
+          <p class="card-description">
+            Professional henna application for all occasions - weddings, parties, celebrations, and everyday wear.
+          </p>
+          <a href="./henna.html"><button class="primary-btn">Browse Designs</button></a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-image">
+          <img src="../assets/images/henna_products-02.png" alt="henna products" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div class="card-content">
+          <h3 class="card-title">Premium Products</h3>
+          <p class="card-description">
+            High-quality henna paste, aftercare products, and professional tools for DIY enthusiasts.
+          </p>
+          <a href="./products.html"><button class="primary-btn">Shop Now</button></a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-image">
+          <img src="../assets/images/henna_course-02.png" alt="henna course" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div class="card-content">
+          <h3 class="card-title">Design Courses</h3>
+          <p class="card-description">
+            Learn professional henna design techniques and start your own henna business with our comprehensive course.
+          </p>
+          <a href="./home.html#course-section"><button class="primary-btn">Learn More</button></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Me -->
+  <section>
+    <h2 class="section-title" style="margin-bottom: 50px;">Why Choose The Hennapreneur?</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto;">
+      <div style="text-align: center;">
+        <div style="margin-bottom: 1rem;">
+          <img src="../assets/icons/suitcase.png" alt="professional icon" style="width: 100px; height: 100px;">
+        </div>
+        <h3 style="margin-bottom: 0.5rem;">Professional Quality</h3>
+        <p style="color: var(--light-text);">Premium henna paste and expert application techniques for stunning results.</p>
+      </div>
+      <div style="text-align: center;">
+        <div style="margin-bottom: 1rem;">
+          <img src="../assets/icons/quick.png" alt="fast icon" style="width: 100px; height: 100px;">
+        </div>
+        <h3 style="margin-bottom: 0.5rem;">Fast & Reliable</h3>
+        <p style="color: var(--light-text);">Quick turnaround times with consistent, high-quality results every time.</p>
+      </div>
+      <div style="text-align: center;">
+        <div style="margin-bottom: 1rem;">
+          <img src="../assets/icons/selfcare.png" alt="self care icon" style="width: 100px; height: 100px;">
+        </div>
+        <h3 style="margin-bottom: 0.5rem;">Personalized Service</h3>
+        <p style="color: var(--light-text);">Each design is custom created to match your unique style and preferences.</p>
+      </div>
+      <div style="text-align: center;">
+        <div style="margin-bottom: 1rem;">
+          <img src="../assets/icons/planet-earth.png" alt="natural icon" style="width: 100px; height: 100px;">
+        </div>
+        <h3 style="margin-bottom: 0.5rem;">Natural & Safe</h3>
+        <p style="color: var(--light-text);">100% natural ingredients with no harmful chemicals or additives.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section style="background: linear-gradient(135deg, var(--primary-color) 0%, #f59999 100%); color: white; text-align: center;">
+    <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Ready to Experience Beautiful Henna?</h2>
+    <p style="font-size: 1.1rem; margin-bottom: 2rem; opacity: 0.9;">Book your session today or explore our premium products</p>
+    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+      <button class="hero-cta" onclick="window.location='./henna.html'" style="background: white; color: var(--primary-color);">Book Now</button>
+      <button class="hero-cta" onclick="window.location='./products.html'" style="background: transparent; border: 2px solid white; color: white;">Shop Products</button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>The Hennapreneur</h4>
+        <p style="color: #ccc; line-height: 1.6;">
+          Professional henna artist dedicated to creating beautiful, lasting henna designs for all occasions.
+        </p>
+        <div class="social-links">
+          <a href="https://www.snapchat.com/@hennapreneur" target="_blank" aria-label="Snap Chat"><img src="../assets/images/snap_chat_logo.png" alt="snap chat logo" height="50" width="50"></a>
+          <a href="https://www.instagram.com/yhishatelegance?igsh=MTh1eW02d2oxbDV4bA%3D%3D" target="_blank" aria-label="Instagram"><img src="../assets/images/instagram_logo.png" alt="instagram logo" height="50" width="50"></a>
+          <a href="#" target="_blank" aria-label="Tik Tok"><img src="../assets/images/tiktok_logo.png" alt="tiktok logo" height="50" width="50"></a>
+        </div>
+      </div> 
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="./home.html">Home</a></li>
+          <li><a href="./about.html">About</a></li>
+          <li><a href="./henna.html">Henna Designs</a></li>
+          <li><a href="./products.html">Products</a></li>
+          <li><a href="./contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Services</h4>
+        <ul class="footer-links">
+          <li><a href="./henna.html">Book a Session</a></li>
+          <li><a href="./products.html">Shop Products</a></li>
+          <li><a href="#course-section">Henna Course</a></li>
+          <li><a href="./contact.html">Get in Touch</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Contact Info</h4>
+        <p style="color: #ccc; margin-bottom: 0.5rem;">ayishainusah037@gmail.com</p>
+        <p style="color: #ccc; margin-bottom: 0.5rem;">050 473 2494 / 053 264 1071</p>
+        <p style="color: #ccc;">Dansoman, Accra, Ghana</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 The Hennapreneur. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js/dist/umd/supabase.min.js"></script>
+  <script src="../js/config.js"></script>
+  <script src="../js/supabase.js"></script>
+  <script src="../js/email.js"></script>
+  <script src="../js/payment.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/animations.js"></script>
+</body>
+</html>

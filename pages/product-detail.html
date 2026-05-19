@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Premium henna products - The Hennapreneur">
+  <title>Product Details - The Hennapreneur</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <p class="logo">The Hennapreneur</p>
+    <ul class="nav-links">
+      <li><a href="./home.html">Home</a></li>
+      <li><a href="./henna.html">Henna</a></li>
+      <li><a href="./products.html">Products</a></li>
+      <li><a href="./about.html">About</a></li>
+      <li><a href="./contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-icons">
+      <div class="cart-icon">
+        <img src="../assets/icons/shopping-cart.svg" alt="icon" style="width: 24px; height: 24px;">
+        <span class="cart-count">0</span>
+      </div>
+      <div class="hamburger">
+        <img src="../assets/icons/menu-burger.svg" alt="icon" style="width: 24px; height: 24px;">
+      </div>
+    </div>
+  </nav>
+
+  <!-- Cart Sidebar -->
+  <div class="cart-sidebar">
+    <div class="cart-header">
+      <h2 class="cart-title">Shopping Cart</h2>
+      <button class="close-btn">✕</button>
+    </div>
+    <div class="cart-items"></div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Total:</span>
+        <span>$0.00</span>
+      </div>
+      <button class="checkout-btn" onclick="proceedToCheckout()">Proceed to Checkout</button>
+    </div>
+  </div>
+
+  <!-- Detail Container -->
+  <section class="detail-container">
+    <div class="detail-image"></div>
+    <div class="detail-content">
+      <h1 class="detail-title" id="title"></h1>
+      <div class="detail-price" id="price"></div>
+      <div id="unitPrice" style="color: var(--light-text); font-size: 0.9rem; margin-top: -1rem; margin-bottom: 1rem;"></div>
+      <p class="detail-description" id="description"></p>
+      
+      <div class="detail-meta">
+        <div class="meta-item">
+          <div class="meta-label">
+            <p style="font-weight: 500;"><strong>Category:</strong></p>
+            <p class="meta-value" id="category"></p>
+          </div>
+        </div>
+        <div class="meta-item">
+          <div class="meta-label">
+            <p style="font-weight: 500;"><strong>Stock:</strong></p>
+            <p class="meta-value">In Stock</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 10px; margin: 2rem 0 0;">
+        <label for="quantity" style="font-weight: 500;">Quantity</label>
+        <div style="display: flex; gap: 1rem; align-items: center; margin-bottom: 1rem;">
+          <div style="display: flex; border: 1px solid var(--border-color); border-radius: 5px; overflow: hidden;">
+            <button onclick="updateQty(-1)" style="background: white; border: none; padding: 8px 12px; cursor: pointer;">−</button>
+            <input type="number" id="quantity" value="1" min="1" style="width: 60px; border: none; text-align: center; font-size: 1rem;" readonly>
+            <button onclick="updateQty(1)" style="background: white; border: none; padding: 8px 12px; cursor: pointer;">+</button>
+          </div>
+        </div>
+      </div>
+      <div class="variations-group" style="margin-bottom: 1rem;">
+        <label class="variation-radio">
+          <input type="radio" name="unitType" value="piece" checked onchange="updatePrice()">
+          <span class="variation-label">Piece</span>
+        </label>
+        <label class="variation-radio">
+          <input type="radio" name="unitType" value="pack" onchange="updatePrice()">
+          <span class="variation-label">Pack (12)</span>
+        </label>
+      </div>
+
+      <div class="detail-actions">
+        <button class="primary-btn" onclick="addToCartDetail()">Add to Cart</button>
+        <button class="secondary-btn" onclick="window.location='./products.html'">Continue Shopping</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Products -->
+  <section style="background: #f9f9f9;">
+    <h2 class="section-title" style="margin-bottom: 50px;">Related Products</h2>
+    <div class="grid" id="relatedGrid"></div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>The Hennapreneur</h4>
+        <p style="color: #ccc; line-height: 1.6;">
+          Professional henna artist dedicated to creating beautiful, lasting henna designs for all occasions.
+        </p>
+        <div class="social-links">
+          <a href="https://www.snapchat.com/@hennapreneur" target="_blank" aria-label="Snap Chat"><img src="../assets/images/snap_chat_logo.png" alt="snap chat logo" height="50" width="50"></a>
+          <a href="https://www.instagram.com/yhishatelegance?igsh=MTh1eW02d2oxbDV4bA%3D%3D" target="_blank" aria-label="Instagram"><img src="../assets/images/instagram_logo.png" alt="instagram logo" height="50" width="50"></a>
+          <a href="#" target="_blank" aria-label="Tik Tok"><img src="../assets/images/tiktok_logo.png" alt="tiktok logo" height="50" width="50"></a>
+        </div>
+      </div> 
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="./home.html">Home</a></li>
+          <li><a href="./about.html">About</a></li>
+          <li><a href="./henna.html">Henna Designs</a></li>
+          <li><a href="./products.html">Products</a></li>
+          <li><a href="./contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Services</h4>
+        <ul class="footer-links">
+          <li><a href="./henna.html">Book a Session</a></li>
+          <li><a href="./products.html">Shop Products</a></li>
+          <li><a href="#course-section">Henna Course</a></li>
+          <li><a href="./contact.html">Get in Touch</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Contact Info</h4>
+        <p style="color: #ccc; margin-bottom: 0.5rem;">ayishainusah037@gmail.com</p>
+        <p style="color: #ccc; margin-bottom: 0.5rem;">050 473 2494 / 053 264 1071</p>
+        <p style="color: #ccc;">Dansoman, Accra, Ghana</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 The Hennapreneur. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js/dist/umd/supabase.min.js"></script>
+  <script src="../js/config.js"></script>
+  <script src="../js/supabase.js"></script>
+  <script src="../js/email.js"></script>
+  <script src="../js/payment.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/animations.js"></script>
+  <script>
+     let currentProduct = null;
+     let quantity = 1;
+     let dataReady = false;
+
+     async function loadProductDetail() {
+       console.log('loadProductDetail: Waiting for products data to load...');
+       
+       let attempts = 0;
+       while (!dataReady && attempts < 100) {
+         if (window.data.products && Array.isArray(window.data.products) && window.data.products.length > 0) {
+           console.log('loadProductDetail: Data ready, loading product');
+           dataReady = true;
+           break;
+         }
+         await new Promise(resolve => setTimeout(resolve, 100));
+         attempts++;
+       }
+
+       if (!dataReady) {
+         console.error('loadProductDetail: Data failed to load after waiting');
+         document.body.innerHTML = '<div style="text-align: center; padding: 100px; font-size: 1.5rem;">Failed to load product data</div>';
+         return;
+       }
+
+       const urlParams = new URLSearchParams(window.location.search);
+       const productId = parseInt(urlParams.get('id'));
+
+       currentProduct = window.data.products.find(p => p.id === productId);
+
+       if (!currentProduct) {
+         document.body.innerHTML = '<div style="text-align: center; padding: 100px; font-size: 1.5rem;">Product not found</div>';
+         return;
+       }
+
+       const detailImage = document.querySelector('.detail-image');
+       detailImage.innerHTML = currentProduct.image 
+         ? `<img src="${currentProduct.image}" alt="${currentProduct.name || 'Product'}">` 
+         : '';
+
+       document.getElementById('title').textContent = currentProduct.name || 'Unnamed Product';
+       document.getElementById('description').textContent = currentProduct.description || '';
+       document.getElementById('category').textContent = currentProduct.category || 'Uncategorized';
+
+       updatePrice();
+
+       const related = window.data.products
+         .filter(p => (p.category || '') === (currentProduct.category || '') && p.id !== currentProduct.id)
+         .slice(0, 3);
+
+       const relatedGrid = document.getElementById('relatedGrid');
+       if (related.length === 0) {
+         relatedGrid.innerHTML = '<p style="grid-column: 1/-1; text-align: center; color: var(--light-text);">No related products</p>';
+       } else {
+         relatedGrid.innerHTML = related.map(product => `
+           <div class="card">
+             <div class="card-image">
+               ${product.image ? `<img src="${product.image}" alt="${product.name || 'Product'}">` : ''}
+             </div>
+             <div class="card-content">
+               <h3 class="card-title">${product.name || 'Unnamed Product'}</h3>
+               <p class="card-description">${product.description ? product.description.substring(0, 80) + '...' : ''}</p>
+               <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                 <div class="card-price">${formatCurrency(product.pricing?.single || product.price || 0)}</div>
+             </div>
+               <div class="card-footer">
+                 <button class="view-btn" onclick="window.location='./product-detail.html?id=${product.id}'">View</button>
+               </div>
+             </div>
+           </div>
+         `).join('');
+       }
+     }
+
+     function formatCurrency(value) {
+       return `GHS ${Number(value || 0).toFixed(2)}`;
+     }
+
+     function getUnitPrice() {
+       const unitType = document.querySelector('input[name="unitType"]:checked')?.value || 'piece';
+       const pricing = currentProduct.pricing || {};
+       
+       if (unitType === 'piece') {
+         return pricing.single || 0;
+       } else {
+         if (quantity > 6 && pricing.bulkPack) {
+           return pricing.bulkPack;
+         }
+         return pricing.packOf12 || 0;
+       }
+     }
+
+     function updatePrice() {
+       const unitPrice = getUnitPrice();
+       const totalPrice = unitPrice * quantity;
+       document.getElementById('price').textContent = formatCurrency(totalPrice);
+       
+       const unitType = document.querySelector('input[name="unitType"]:checked')?.value || 'piece';
+       const pricing = currentProduct.pricing || {};
+       const unitLabel = unitType === 'piece' ? 'per piece' : 'per pack';
+       document.getElementById('unitPrice').textContent = `${formatCurrency(unitPrice)} ${unitLabel}${quantity > 6 && unitType === 'pack' && pricing.bulkPack ? ' (bulk rate)' : ''}`;
+     }
+
+     function updateQty(change) {
+       quantity = Math.max(1, quantity + change);
+       document.getElementById('quantity').value = quantity;
+       updatePrice();
+     }
+
+     function addToCartDetail() {
+       const unitPrice = getUnitPrice();
+       const unitType = document.querySelector('input[name="unitType"]:checked')?.value || 'piece';
+       
+       addToCart({
+         id: currentProduct.id,
+         name: currentProduct.name || 'Unnamed Product',
+         price: unitPrice,
+         type: 'product',
+         category: currentProduct.category || 'Uncategorized',
+         unitType: unitType,
+         quantity: quantity,
+         image: currentProduct.image || ''
+       });
+       quantity = 1;
+       document.getElementById('quantity').value = 1;
+       document.querySelector('input[name="unitType"][value="piece"]').checked = true;
+       updatePrice();
+     }
+
+     loadProductDetail();
+   </script>
+</body>
+</html>
