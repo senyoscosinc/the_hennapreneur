@@ -1,3 +1,18 @@
-[build]
-  command = "bash generate-config.sh"
-  publish = "."
+#!/bin/bash
+cat > js/config.js << EOF
+const CONFIG = {
+  EMAILJS_PUBLIC_KEY: '${EMAILJS_PUBLIC_KEY}',
+  EMAILJS_SERVICE_ID: '${EMAILJS_SERVICE_ID}',
+  EMAILJS_CHECKOUT_TEMPLATE: '${EMAILJS_CHECKOUT_TEMPLATE}',
+  EMAILJS_CUSTOMER_TEMPLATE: '${EMAILJS_CUSTOMER_TEMPLATE}',
+  EMAILJS_BUSINESS_RECIPIENT: '${EMAILJS_BUSINESS_RECIPIENT}',
+  SUPABASE_URL: '${SUPABASE_URL}',
+  SUPABASE_ANON_KEY: '${SUPABASE_ANON_KEY}',
+  HENNA_BUCKET: '${HENNA_BUCKET}',
+};
+
+if (typeof window !== 'undefined') window.CONFIG = CONFIG;
+if (typeof global !== 'undefined') global.CONFIG = CONFIG;
+EOF
+
+echo "config.js generated successfully"
