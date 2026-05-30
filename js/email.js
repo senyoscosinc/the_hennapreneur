@@ -98,10 +98,13 @@ async function sendCheckoutConfirmationEmail(order) {
       Customer Phone:  ${order.phone || 'N/A'}
       Order Notes:     ${order.notes || 'None'}
       Order Total:     ${formatCurrency(order.total)}
+      Order Date:      ${order.date || 'N/A'}
 
       Items:
       ${orderItemsList}
     `.trim(),
+    order_date: order.date || '',
+    order_time: order.time || ''
   };
 
   if (businessEmail) {
@@ -119,6 +122,7 @@ async function sendCheckoutConfirmationEmail(order) {
       Here is a summary of your order:
       Order Reference: ${order.reference || 'N/A'}
       Order Total:     ${formatCurrency(order.total)}
+      Order Date:      ${order.date || 'N/A'}
 
       Items:
       ${orderItemsList}
@@ -129,6 +133,8 @@ async function sendCheckoutConfirmationEmail(order) {
       Best regards,
       Ayisha Inusah
     `.trim(),
+    order_date: order.date || '',
+    order_time: order.time || ''
   };
 
   try {
@@ -223,7 +229,12 @@ async function sendBookingConfirmationEmail(booking) {
   `.trim();
 
   const businessParams = {
-    message: businessMessage
+    message: businessMessage,
+    booking_reference: bookingReference,
+    booking_date: booking.date || '',
+    booking_time: booking.time || '',
+    preferred_date: booking.date || '',
+    preferred_time: booking.time || ''
   };
 
   if (businessEmail) {
@@ -232,7 +243,12 @@ async function sendBookingConfirmationEmail(booking) {
 
   const customerParams = {
     customer_email: customerEmail,
-    message: customerMessage
+    message: customerMessage,
+    booking_reference: bookingReference,
+    booking_date: booking.date || '',
+    booking_time: booking.time || '',
+    preferred_date: booking.date || '',
+    preferred_time: booking.time || ''
   };
 
   try {
